@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Form</title>
+        <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/a407IiiHRD-bYahBPFJwiL9_8J8j-qMspVXYkng7AQD3M8UjBeAgx0TsFozaG8Y2jU4" />
+    </head>
+    <link rel="stylesheet" href="common.css" />
+    <script src="main.js"></script>
+    <body>
+        <div class="main">
+            <h1>Form</h1>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="rns">Rather not say</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Interests:</label>
+                    <textarea id="interest" name="interest" rows="4" placeholder="Enter your subjects of interest"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lang">Languages known:</label>
+                    <div style="background-color: powderblue; border-radius: 0.25em; padding: 1em; margin: 0.1em">
+                        <input type="checkbox" id="english" name="english" value="English">
+                        <label for="english"> English </label>
+                        <input type="checkbox" id="hindi" name="hindi" value="Hindi">
+                        <label for="hindi"> Hindi </label>
+                        <input type="checkbox" id="telugu" name="telugu" value="Telugu">
+                        <label for="telugu"> Telugu </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Address:</label>
+                    <input type="text" id="addr" name="addr" placeholder="Enter your address" required>
+                </div>
+                <div class="form-group">
+                    <label for="pin">Pin Code:</label>
+                    <input type="text" id="pin" name="pin" placeholder="Enter your pin code" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" placeholder="Enter your country" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" onclick="makeSure(1)" value="Submit">
+                    <input type="reset" onclick="makeSure(2)" value="Reset">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
