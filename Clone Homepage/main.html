@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NIT Warangal</title>
+    <link rel="icon" href="https://www.nitw.ac.in/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="https://nitw.ac.in/images/NITW_logo_telugu3.png" alt="NIT Warangal Logo" class="logo" style="filter: invert(100%)">
+            <ul>
+                <li><a href="https://www.nitw.ac.in/">Home</a></li>
+                <li><a href="https://nitw.ac.in/aboutus">About</a></li>
+                <li><a href="https://nitw.ac.in/ap">Academics</a></li>
+                <li><a href="https://nitw.ac.in/path/?dept=/ad2021">Admissions</a></li>
+                <li><a href="https://www.nitw.ac.in/rc">Research</a></li>
+                <li><a href="https://nitw.ac.in/SGR">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="marquee">
+        <div class="marquee-content">
+            <p><span class="rtext">Announcement:</span> Registration for even semester has ended.</p>
+        </div>
+    </div>
+
+    <section class="slider">
+        <div class="slides">
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            
+            <div class="slide slide1">
+                <img src="https://nitw.ac.in/images/nitw3.jpg" alt="Ramappa HoR">
+            </div>
+            <div class="slide slide2">
+                <img src="https://media.collegedekho.com/media/uploads/2023/10/18/nit-warangal-location.jpeg" alt="Administration & Library">
+            </div>
+            <div class="slide slide3">
+                <img src="https://nitw.ac.in/images/nitw4.jpg" alt="Incubation">
+            </div>
+
+            <div class="navigation">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-events">
+        <h2>News & Events</h2>
+        <div class="event">
+            <h3>Spring Spree Fest</h3>
+            <p style="word-wrap: break-word;">SpringSpree - NIT Warangal's annual cultural fest - started in 1978 as a refreshing break from classes. Now, after 47 years, it's renowned as one of the nation's best cultural festivals, attracting participants from all around the country. Over time, we've hosted famous artists, enriching the festival with their esteemed presence and performances.</p>
+        </div>
+        <div class="event">
+            <h3>Technozion</h3>
+            <p style="word-wrap: break-word">Technozion, NIT Warangal's annual technical festival, started as a platform for students to showcase their technical skills and innovations. Now, after many successful editions, it has become one of the most anticipated technical fests in the country, attracting participants from various institutions. Throughout its history, Technozion has hosted renowned speakers and experts, providing valuable insights and inspiration to attendees. The festival features various competitions, workshops, and exhibitions, creating a vibrant atmosphere of learning and collaboration.</p>
+        </div>
+    </section>
+
+    <section class="campus-life">
+        <h2>Campus Life</h2>
+        <div class="images">
+            <img src="https://assets.thehansindia.com/h-upload/2024/01/20/1416075-nitw.jpg" alt="Campus Life Image 1">
+            <img src="https://nitw.ac.in/api/static/files/Chemical_Engineering_2023-10-16-11-17-30.jpg" alt="Campus Life Image 2">
+            <img src="https://dasaciwg.com/wp-content/uploads/2023/10/NIT-Warangal-1.jpeg" alt="Campus Life Image 3">
+        </div>
+    </section>
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 3;
+        function showSlide(slideIndex) 
+        {
+            if (slideIndex > totalSlides) 
+                currentSlide = 1;
+            else if (slideIndex < 1) 
+                currentSlide = totalSlides;
+            else
+                currentSlide = slideIndex;
+            document.getElementById(`slide${currentSlide}`).checked = true;
+        }
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+    </script>
+</body>
+</html>
