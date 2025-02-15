@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Udaipur - Booking</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/a407IiiHRD-bYahBPFJwiL9_8J8j-qMspVXYkng7AQD3M8UjBeAgx0TsFozaG8Y2jU4" />
+    </head>
+    <link rel="stylesheet" href="common.css" />
+    <body>
+        <div class="top-nav">
+            <div class="list">
+                <img src="logo.png" width="50" height="50" alt="Logo" />
+                <div class="element"><a href="home.html">Home</a></div>
+                <div class="element"><a href="heritage.html">Heritage</a></div>
+                <div class="element"><a href="booking.html">Hotel Booking</a></div>
+                <div class="element"><a href="gallery.html">Gallery</a></div>
+            </div>
+        </div>
+        <div class="main">
+            <div style="text-align: center;">
+                <h1 style="text-shadow: 2px 2px powderblue;"> Plan your stay today! </h1>
+                <div style="display: grid; grid-template-columns: 0.99fr 0.01fr;">
+                    <div class="content-box">
+                        <p style="word-wrap: break-word; padding: 1em; justify-content: center; align-items: center;">
+                            Nestled on the serene banks of Fateh Sagar Lake, the Radisson Blu Udaipur Palace Resort & Spa offers a perfect blend of regal Rajasthani charm and modern luxury. With its stunning architecture, opulent interiors, and breathtaking views of Udaipur's lakes and Aravalli hills, this five-star resort sets the stage for an unforgettable stay.
+                        </p>
+                    </div>
+                    <img src="https://content.skyscnr.com/available/1267095070/1267095070_WxH.jpg" width="400" height="300" alt="Radisson Blu" /><br /><span class="caption">The <i>Radisson Blu</i> resort, located near the <i>Fateh Sagar</i> lake.</span>
+                </div>
+
+                <div class="content-box">
+                        <div class="form-container" style="width: 100%">
+                            <h1>Hotel Booking Form</h1>
+                            <form action="/submit-booking" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Full Name:</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address:</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkin">Check-In Date:</label>
+                                    <input type="date" id="checkin" name="checkin" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkout">Check-Out Date:</label>
+                                    <input type="date" id="checkout" name="checkout" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="room">Room Type:</label>
+                                    <select id="room" name="room" required>
+                                        <option value="single">Single Room</option>
+                                        <option value="double">Double Room</option>
+                                        <option value="suite">Suite</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guests">Number of Guests:</label>
+                                    <input type="number" id="guests" name="guests" min="1" max="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="special">Special Requests:</label>
+                                    <textarea id="special" name="special" rows="4" placeholder="Enter any special requests"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Book Now">
+                                </div>
+                            </form>
+                        </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 1em">
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.979483563881!2d73.66625567398239!3d24.589904256033027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e547b9828855%3A0x258344463865cdcf!2sRadisson%20Blu%20Palace%20Resort%20%26%20Spa%2C%20Udaipur!5e0!3m2!1sen!2sin!4v1738080612789!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div style="display: grid; grid-template-columns: 0.5fr 0.5fr; grid-gap: 0.5em">
+                    <button class="sm-button"> <img src="https://freepnglogo.com/images/all_img/1707226109new-twitter-logo-png.png" height="100" width="100" /> </button>
+                    <button class="sm-button"> <img src="https://cdn-icons-png.flaticon.com/512/52/52053.png" height="100" width="100" /> </button>
+            </div>
+        </div>
+        <div class="footer" style="color: white; font-size: x-small">
+            Copyright© Saket Modi (2025).
+        </div>
+    </body>
+</html>
