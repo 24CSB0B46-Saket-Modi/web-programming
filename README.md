@@ -4,5 +4,5 @@ This repository houses all works created by Saket Modi as a part of the 'Web Pro
 <hr />
 <b> Links to projects: (GitHub pages view) </b><br />
   1. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Form/mainForm.html">Form</a><br />
-  2. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Clone_Homepage/main.html">NITW Homepage Clone</a><br />
+  2. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Clone%20Homepage/main.html">NITW Homepage Clone</a><br />
 <i>Undersigned: Saket Modi (24CSB0B46)</i>
