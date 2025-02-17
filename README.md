@@ -7,4 +7,5 @@ This repository houses all works created by Saket Modi as a part of the 'Web Pro
   2. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Clone%20Homepage/main.html">NITW Homepage Clone</a><br />
   3. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Udaipur/home.html">Udaipur - Tourism Site</a><br />
   4. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Blog%20Site/index.html">Eco Blog Site</a><br />
+  5. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Calculator/index.html">Calculator</a><br />
 <i>Undersigned: Saket Modi (24CSB0B46)</i>
