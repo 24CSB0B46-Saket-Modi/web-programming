@@ -1,0 +1,98 @@
+body {
+    font-family: 'Courier Prime', monospace;
+    background-color: #f0f4f8; /* Soothing light background */
+    color: #333; /* Dark text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4a90e2; /* Soothing blue header */
+    color: white; /* White text for header */
+    padding: 20px;
+    text-align: center;
+}
+
+.calculator {
+    max-width: 300px; /* Maximum width for the calculator */
+    margin: 20px auto; /* Center the calculator */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff; /* White background for the calculator */
+}
+
+#display {
+    width: 100%; /* Full width for the display */
+    height: 40px; /* Height of the display */
+    font-size: 24px; /* Font size for the display */
+    text-align: right; /* Right-align text */
+    margin-bottom: 10px; /* Space below the display */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding inside the display */
+}
+
+.buttons {
+    display: grid; /* Use grid layout for buttons */
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 10px; /* Space between buttons */
+}
+
+button {
+    padding: 20px; /* Padding inside buttons */
+    font-size: 18px; /* Font size for buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #4a90e2; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: #357ab8; /* Darker blue on hover */
+}
+
+.equals {
+    grid-column: span 2; /* Equals button spans two columns */
+}
+
+.image-grid {
+    display: flex; /* Flexbox for image grid */
+    flex-wrap: wrap; /* Wrap images to the next line */
+    justify-content: center; /* Center images */
+    margin: 20px; /* Margin around the grid */
+}
+
+.image-item {
+    flex: 1 1 200px; /* Flex item with a base width of 200px */
+    margin: 10px; /* Space between images */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+
+.image-item img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth scaling transition */
+}
+
+.image-item img:hover {
+    transform: scale(1.05); /* Scale image on hover */
+}
+
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on small screens */
+    }
+
+    .equals {
+        grid-column: span 3; /* Equals button spans three columns on small screens */
+    }
+}
