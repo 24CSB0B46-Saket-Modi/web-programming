@@ -1,0 +1,45 @@
+body
+{
+    margin: 1em;
+    background-color: cadetblue;
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+}
+button
+{
+    border: unset;
+    border-radius: 0.25em;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    will-change: opacity 0.25s;
+}
+h1
+{
+    text-align: center;
+}
+#movie
+{
+    margin: 0.5em;
+    border: unset;
+}
+#add
+{
+    background-color: green;
+    color: white;
+}
+#removeAll
+{
+    background-color: red;
+    color: white;
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+}
+button:hover
+{
+    opacity: 0.75;
+    cursor: pointer;
+}
