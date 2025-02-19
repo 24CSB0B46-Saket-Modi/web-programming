@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <h1 id="listHeading"> List of Movies </h1>
-        <p>Number of movies: <p id="count">0</p></p>
-        <input id="movIN" type="text" />
-        <button id="add">Add Movie to List</button>
-        <ul id="mList"></ul>
-        <button id="removeAll">Remove all</button>
+    <div class="main">
+        <div class="container">
+            <h1 id="listHeading"> List of Movies </h1>
+            <p style="font-weight: bold">Number of movies entered: <p id="count">0</p></p>
+            <input id="movIN" type="text" placeholder="Enter movie name..." />
+            <button id="add">Add Movie to List</button>
+            <div style="border: 2px solid salmon; padding: 2em;"><p align="center">Your list:</p><br /><ul id="mList"></ul></div>
+            <button id="removeAll">Remove all</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
