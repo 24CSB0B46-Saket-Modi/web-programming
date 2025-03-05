@@ -1,0 +1,129 @@
+body {
+    margin: 0px;
+    background-color: powderblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.top-nav {
+    top: 0;
+    z-index: 1100;
+    position: sticky;
+    overflow: hidden;
+    background-color: #31435d;
+    font-weight: bold;
+    border-bottom: 4px solid #809dc6;
+    padding: 1em;
+    text-align: center;
+    color: white;
+}
+.top-nav img
+{
+    will-change: transform;
+    transition: 0.2s;
+    margin-right: 1em;
+    filter: invert(100%);
+    box-shadow: 0 0 2px 5px black;
+}
+.top-nav img:hover
+{
+    transform: translateX(4px);
+}
+.main {
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 5px 2px white;
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    color: #31435d; 
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+#product-list {
+    flex: 2;
+    margin-right: 1em;
+}
+.product {
+    margin: 1em;
+    text-align: center;
+}
+.product img {
+    box-shadow: 2px 2px 5px 2px powderblue;
+    transition: 0.1s;
+}
+.product img:hover {
+    transform: scale(105%);
+}
+.caption {
+    font-size: small; 
+    color: #858585;
+    padding: 0.25em;
+    margin: 0.25em;
+}
+.sm-button {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    background-color: #809dc6;
+    color: powderblue;
+    border-radius: 0.1em;
+    border: unset;
+    transition: 0.1s;
+    margin: 0.1em;
+}
+.sm-button a
+{
+    text-decoration: none;
+    color: powderblue;
+}
+.sm-button:hover {
+    transform: translateX(3px);
+    opacity: 50%;
+    cursor: pointer;
+}
+.nav-button {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    background-color: #809dc6;
+    color: powderblue;
+    border-radius: 0.1em;
+    border: unset;
+    transition: 0.1s;
+    margin: 0.1em;
+}
+.nav-button a
+{
+    text-decoration: none;
+    color: powderblue;
+}
+.nav-button:hover {
+    transform: translateX(3px);
+    opacity: 50%;
+    cursor: pointer;
+}
+#cart {
+    flex: 1;
+    margin-left: 1em;
+    padding: 1em;
+    border: 2px solid #31435d;
+    background-color: #f9f9f9;
+}
+.footer {
+    display: flex; 
+    font-size: large; 
+    border-top: 4px solid #809dc6; 
+    background-color: #31435d; 
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    padding: 1em;
+}
+h2
+{
+    text-align: center;
+    display: grid;
+    border-bottom: 4px solid powderblue;
+    font-style: italic;
+    width: 100%;
+}
