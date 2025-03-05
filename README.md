@@ -9,4 +9,5 @@ This repository houses all works created by Saket Modi as a part of the 'Web Pro
   4. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Blog%20Site/index.html">Eco Blog Site</a><br />
   5. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Calculator/index.html">Calculator</a><br />
   6. <a href="https://24csb0b46-saket-modi.github.io/web-programming/movieList/index.html">movieList</a><br />
+  7. <a href="https://24csb0b46-saket-modi.github.io/web-programming/productCatalog/index.html">productCatalog</a><br />
 <i>Undersigned: Saket Modi (24CSB0B46)</i>
