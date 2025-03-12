@@ -10,4 +10,5 @@ This repository houses all works created by Saket Modi as a part of the 'Web Pro
   5. <a href="https://24csb0b46-saket-modi.github.io/web-programming/Calculator/index.html">Calculator</a><br />
   6. <a href="https://24csb0b46-saket-modi.github.io/web-programming/movieList/index.html">movieList</a><br />
   7. <a href="https://24csb0b46-saket-modi.github.io/web-programming/productCatalog/index.html">productCatalog</a><br />
+  8. <a href="https://24csb0b46-saket-modi.github.io/web-programming/HTMLDOM/index.html">HTML DOM</a><br />
 <i>Undersigned: Saket Modi (24CSB0B46)</i>
