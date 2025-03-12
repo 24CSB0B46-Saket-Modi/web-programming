@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML DOM</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&family=Righteous&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav class="top-nav">
+            <div class="nav-content">
+                <h1 class="main-title">
+                    <span class="html-text">HTML</span>
+                    <span class="dom-text">DOM</span>
+                </h1>
+                <div class="theme-buttons">
+                    <button id="lightMode" class="theme-btn light-btn">
+                        <i class="fas fa-sun"></i>
+                        Light
+                    </button>
+                    <button id="darkMode" class="theme-btn dark-btn">
+                        <i class="fas fa-moon"></i>
+                        Dark
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main">
+            <div class="feature-section">
+                <h2>Countdown Timer</h2>
+                <div id="timer-container">
+                    <div id="timer-display">00:00</div>
+                    <div id="timer-controls">
+                        <input type="number" id="timerInput" placeholder="Enter seconds" min="1">
+                        <button id="startTimer" class="sm-button">Start</button>
+                        <button id="pauseTimer" class="sm-button" disabled>Pause</button>
+                        <button id="resetTimer" class="sm-button" disabled>Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <h2>List Operations</h2>
+                <div id="list-container">
+                    <div class="input-group">
+                        <input type="text" id="itemInput" placeholder="Enter item">
+                        <button id="addItem" class="sm-button">Add</button>
+                    </div>
+                    <ul id="itemList"></ul>
+                    <div class="list-controls">
+                        <button id="sortList" class="sm-button">Sort</button>
+                        <button id="removeDuplicates" class="sm-button">Remove Duplicates</button>
+                        <button id="reverseList" class="sm-button">Reverse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <h2>Dynamic Table</h2>
+                <div id="table-container">
+                    <div class="input-group">
+                        <input type="text" id="nameInput" placeholder="Name">
+                        <input type="text" id="ageInput" placeholder="Age">
+                        <input type="text" id="cityInput" placeholder="City">
+                        <button id="addRow" class="sm-button">Add Row</button>
+                    </div>
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>City</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <h2>Image Gallery</h2>
+                <div id="gallery-container">
+                    <div id="thumbnails">
+                        <img src="https://picsum.photos/id/15/250/250" alt="River in Forest" class="thumbnail">
+                        <img src="https://picsum.photos/id/29/250/250" alt="Mountain Lake" class="thumbnail">
+                        <img src="https://picsum.photos/id/65/250/250" alt="Mountain Valley" class="thumbnail">
+                        <img src="https://picsum.photos/id/133/250/250" alt="Forest Path" class="thumbnail">
+                    </div>
+                    <div id="modal" class="modal">
+                        <span class="close-modal">&times;</span>
+                        <img id="modalImage" src="" alt="Large Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>HTML DOM</p>
+        </footer>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
