@@ -1,0 +1,885 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme Navigation */
+.theme-nav {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.theme-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-dropdown-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+.theme-dropdown-btn i {
+    font-size: 1.1rem;
+}
+
+.theme-dropdown-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.theme-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+}
+
+.theme-dropdown-content.show {
+    display: block;
+}
+
+.theme-btn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333333;
+    transition: all 0.3s;
+}
+
+.theme-btn i {
+    width: 1.2rem;
+    text-align: center;
+}
+
+.theme-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Dark Theme Dropdown */
+body[data-theme="dark"] .theme-dropdown-btn {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .theme-dropdown-btn:hover {
+    background-color: #444444;
+}
+
+body[data-theme="dark"] .theme-dropdown-content {
+    background-color: #333333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .theme-btn {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .theme-btn:hover {
+    background-color: #444444;
+}
+
+/* Neon Theme Dropdown */
+body[data-theme="neon"] .theme-dropdown-btn {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="neon"] .theme-dropdown-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+}
+
+body[data-theme="neon"] .theme-dropdown-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ffff;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.3),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Light Theme */
+body[data-theme="light"] {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body[data-theme="light"] .theme-btn {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+body[data-theme="light"] .theme-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .theme-btn {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .theme-btn:hover {
+    background-color: #444444;
+}
+
+/* Dark Theme Input Icons */
+body[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+body[data-theme="dark"] input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Neon Theme */
+body[data-theme="neon"] {
+    background-color: #000000;
+    color: #00ffff;
+    background-image: 
+        linear-gradient(45deg, rgba(0, 255, 255, 0.05) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 0, 255, 0.05) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 255, 0, 0.05) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 255, 0, 0.05) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    position: relative;
+}
+
+body[data-theme="neon"]::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.05) 0%, transparent 70%),
+        radial-gradient(circle at 30% 70%, rgba(0, 255, 0, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body[data-theme="neon"] .theme-btn {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="neon"] .theme-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+}
+
+/* Clock Styles */
+.clock-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.digital-clock {
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+/* Analog Clock Styles */
+.analog-clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    margin: 2rem auto;
+    background: #f0f0f0;
+    padding: 1rem;
+    box-shadow: 
+        inset 0 0 30px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background: #333;
+    border-radius: 4px;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 30%;
+    background: #333;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 40%;
+    background: #666;
+}
+
+.second-hand {
+    width: 2px;
+    height: 45%;
+    background: #ff0000;
+}
+
+.center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hour-marks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mark {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: #333;
+    left: 50%;
+    transform-origin: 50% 150px;
+}
+
+/* Theme-specific analog clock styles */
+body[data-theme="dark"] .analog-clock {
+    background: #333;
+    box-shadow: 
+        inset 0 0 30px rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .hand,
+body[data-theme="dark"] .center-dot,
+body[data-theme="dark"] .mark {
+    background: #fff;
+}
+
+body[data-theme="dark"] .second-hand {
+    background: #ff4444;
+}
+
+body[data-theme="neon"] .analog-clock {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.3),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+body[data-theme="neon"] .hand,
+body[data-theme="neon"] .center-dot,
+body[data-theme="neon"] .mark {
+    background: #00ffff;
+    box-shadow: 0 0 5px #00ffff;
+}
+
+body[data-theme="neon"] .second-hand {
+    background: #ff00ff;
+    box-shadow: 0 0 5px #ff00ff;
+}
+
+/* Light Theme Clock */
+body[data-theme="light"] .digital-clock {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Clock */
+body[data-theme="dark"] .digital-clock {
+    background-color: #333333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Theme Clock */
+body[data-theme="neon"] .digital-clock {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 10px #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    border: 2px solid #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+/* Alarm Section Styles */
+.alarm-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+body[data-theme="dark"] .alarm-section {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="neon"] .alarm-section {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.alarm-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.alarm-input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+body[data-theme="dark"] .alarm-input {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+body[data-theme="neon"] .alarm-input {
+    background-color: #000;
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+.alarm-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+body[data-theme="light"] .alarm-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+body[data-theme="light"] .alarm-btn:hover {
+    background-color: #45a049;
+}
+
+body[data-theme="dark"] .alarm-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+body[data-theme="dark"] .alarm-btn:hover {
+    background-color: #45a049;
+}
+
+body[data-theme="neon"] .alarm-btn {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="neon"] .alarm-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+}
+
+.alarm-status {
+    margin-top: 1rem;
+}
+
+.alarm-status p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+body[data-theme="neon"] .alarm-status p {
+    text-shadow: 
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 15px #00ffff;
+}
+
+/* Stopwatch Section Styles */
+.stopwatch-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+body[data-theme="dark"] .stopwatch-section {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="neon"] .stopwatch-section {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.stopwatch-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: inherit;
+}
+
+body[data-theme="neon"] .stopwatch-section h2 {
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.stopwatch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.stopwatch {
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 50%;
+    background: #f0f0f0;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body[data-theme="dark"] .stopwatch {
+    background: #333;
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="neon"] .stopwatch {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.3),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.stopwatch::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ddd, #fff);
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] .stopwatch::before {
+    background: linear-gradient(45deg, #222, #444);
+}
+
+body[data-theme="neon"] .stopwatch::before {
+    background: linear-gradient(45deg, #001100, #003300);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.stopwatch-display {
+    font-family: 'Digital-7', monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+body[data-theme="dark"] .stopwatch-display {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="neon"] .stopwatch-display {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.stopwatch-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.stopwatch-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4CAF50;
+    color: white;
+}
+
+.stopwatch-btn i {
+    font-size: 1.2rem;
+}
+
+.stopwatch-btn:hover {
+    transform: scale(1.1);
+}
+
+body[data-theme="light"] .stopwatch-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+body[data-theme="light"] .stopwatch-btn:hover {
+    background: #45a049;
+}
+
+body[data-theme="dark"] .stopwatch-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+body[data-theme="dark"] .stopwatch-btn:hover {
+    background: #45a049;
+}
+
+body[data-theme="neon"] .stopwatch-btn {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="neon"] .stopwatch-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+}
+
+/* Reset button styles */
+.stopwatch-btn.reset {
+    background: #ff4444;
+}
+
+body[data-theme="light"] .stopwatch-btn.reset {
+    background: #ff4444;
+}
+
+body[data-theme="dark"] .stopwatch-btn.reset {
+    background: #ff4444;
+}
+
+body[data-theme="neon"] .stopwatch-btn.reset {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff00ff;
+    border-color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+body[data-theme="neon"] .stopwatch-btn.reset:hover {
+    background: #ff00ff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 30px #ff00ff;
+}
+
+/* Hide pause button by default */
+#pause-stopwatch {
+    display: none;
+}
+
+/* Show pause button when stopwatch is running */
+#pause-stopwatch.visible {
+    display: flex;
+}
+
+/* Countdown Section Styles */
+.countdown-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+body[data-theme="dark"] .countdown-section {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="neon"] .countdown-section {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.countdown-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: inherit;
+}
+
+body[data-theme="neon"] .countdown-section h2 {
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.countdown-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.countdown-input {
+    width: 100px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    text-align: center;
+}
+
+body[data-theme="dark"] .countdown-input {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+body[data-theme="neon"] .countdown-input {
+    background-color: #000;
+    color: #00ffff;
+    border-color: #00ffff;
+}
+
+.countdown-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.countdown-btn:hover {
+    background-color: #45a049;
+}
+
+body[data-theme="neon"] .countdown-btn {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="neon"] .countdown-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+}
+
+.countdown-display {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: inherit;
+}
+
+body[data-theme="neon"] .countdown-display {
+    text-shadow: 
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 15px #00ffff;
+}
+
+/* Glowing border animation */
+@keyframes glowBorder {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5),
+                    0 0 10px rgba(255, 0, 0, 0.3),
+                    0 0 15px rgba(255, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+                    0 0 20px rgba(255, 0, 0, 0.5),
+                    0 0 30px rgba(255, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5),
+                    0 0 10px rgba(255, 0, 0, 0.3),
+                    0 0 15px rgba(255, 0, 0, 0.2);
+    }
+}
+
+/* Light Theme Glow */
+body[data-theme="light"] .section-glow {
+    animation: glowBorder 1s ease-in-out 2;
+}
+
+/* Dark Theme Glow */
+body[data-theme="dark"] .section-glow {
+    animation: glowBorder 1s ease-in-out 2;
+}
+
+/* Neon Theme Glow */
+body[data-theme="neon"] .section-glow {
+    animation: glowBorder 1s ease-in-out 2;
+    border-color: #00ffff;
+}
+
+/* Neon Theme Glow Animation */
+@keyframes cyberpunkGlow {
+    0% {
+        box-shadow: 
+            0 0 5px rgba(0, 255, 255, 0.5),
+            0 0 10px rgba(255, 0, 255, 0.3),
+            0 0 15px rgba(255, 255, 0, 0.2),
+            0 0 20px rgba(0, 255, 0, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 0 10px rgba(0, 255, 255, 0.7),
+            0 0 20px rgba(255, 0, 255, 0.5),
+            0 0 30px rgba(255, 255, 0, 0.3),
+            0 0 40px rgba(0, 255, 0, 0.2);
+    }
+    100% {
+        box-shadow: 
+            0 0 5px rgba(0, 255, 255, 0.5),
+            0 0 10px rgba(255, 0, 255, 0.3),
+            0 0 15px rgba(255, 255, 0, 0.2),
+            0 0 20px rgba(0, 255, 0, 0.1);
+    }
+}
+
+body[data-theme="neon"] .section-glow {
+    animation: cyberpunkGlow 1s ease-in-out 2;
+}
+
+/* Section base styles */
+.clock-container,
+.countdown-section,
+.stopwatch-section,
+.alarm-section {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+/* Mark Positions */
+.mark-1 { transform: rotate(30deg); }
+.mark-2 { transform: rotate(60deg); }
+.mark-3 { transform: rotate(90deg); }
+.mark-4 { transform: rotate(120deg); }
+.mark-5 { transform: rotate(150deg); }
+.mark-6 { transform: rotate(180deg); }
+.mark-7 { transform: rotate(210deg); }
+.mark-8 { transform: rotate(240deg); }
+.mark-9 { transform: rotate(270deg); }
+.mark-10 { transform: rotate(300deg); }
+.mark-11 { transform: rotate(330deg); }
+.mark-12 { transform: rotate(0deg); }
